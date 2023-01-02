@@ -1,2 +1,26 @@
-# Python
+# Python Programming Language
 
+#### [PEP8](00_pep8.py)
+
+#### [Basics](01_basics.py)
+#### [Strings](02_strings.py)
+#### [Control Flow](03_control_flow.py)
+#### [Lists](04_lists.py)
+#### [List Comprehension](05_list_comprehension.py)
+#### [Sets](06_sets.py)
+#### [Tuples](07_tuples.py)
+#### [Dictionary](08_dictionary.py)
+#### [Functions](09_functions.py)
+#### [Lambda Functions](10_lambda_functions.py)
+#### [User Input](11_user_input.py)
+#### [Files](12_files.py)
+#### [Parsing Data](13_parsing_data.py)
+#### [Name_Main 1](14_name_main_1.py)
+#### [Name_Main 2](15_name_main_2.py)
+#### [Dunder](16_dunder.py)
+#### [Modules](17_modules.py)
+#### [Class](18_class_example_2.py)
+#### [Generators](19_generators_example.py)
+#### [Try Except](20_try_except.py)
+#### [Decorators](21_decorators_example.py)
+#### [Type Hinting](22_type_hinting.py)
