@@ -1,12 +1,16 @@
-# useful to sort and filter data
+"""
+lambda function is a small anonymous function.
+lambda function can take any number of arguments, but can only have one expression
+useful to sort and filter data
+"""
 
 # assign variable to lambda
-my_func = lambda s: s * 2  # noqa
-print(my_func(5))
+my_lambda = lambda s: s * 2
+print(my_lambda(5))
 
 # lambda with mulitple inputs
-full_name = lambda fn, ln: fn.strip().title() + " " + ln.strip().title()  # noqa
-print(full_name("   stephen", "FREED"))
+full_name = lambda fn, ln: fn.strip().title() + " " + ln.strip().title()
+print(full_name("   foo", "BAR"))
 
 # tuple to hold different lambas
 func_switch = (lambda x: x + 1, lambda x: x - 1)
@@ -18,8 +22,8 @@ for i in range(2):
         print("* "*x)
 
 # lambda to sort on last name
-names = ["Jimmy Bob", "stephen freed", "joe adam", "someone zee", "bob cat"]
+names = ["Jimmy Bob", "Foo Bar", "Joe Adam", "Same Zee", "Bob Cat"]
+print(names)
 names.sort(key=lambda name: name.split(" ")[-1].lower())
 new_names = [name.title() for name in names]
-print(names)
 print(new_names)
