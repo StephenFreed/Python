@@ -1,6 +1,13 @@
 
 
 """
+4 built-in data types in python used to store collections of data list, set, tuple, and dictionary
+
+List is a collection which is ordered and changeable. Allows duplicate members.
+Tuple is a collection which is ordered and unchangeable. Allows duplicate members.
+Set is a collection which is unordered, unchangeable*, and unindexed. No duplicate members.
+Dictionary is a collection which is ordered** and changeable. No duplicate members.
+
 lists can contain any mix of data type
 
 example syntax for methods
