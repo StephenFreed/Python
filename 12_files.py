@@ -24,9 +24,9 @@ print(os.listdir(path))
 # join dir path and filename
 print(os.path.join(dir_path, "some/file/path"))
 # move file
-os.replace(excel_file_source, excel_file_dest)
+# os.replace(excel_file_source, excel_file_dest)
 # copy file
-shutil.copy(full_file_path, excel_dir)
+# shutil.copy(full_file_path, excel_dir)
 # remove file
 os.remove(path)
 
@@ -46,7 +46,7 @@ for file_name in repo_files:
 
 processed_source = "/Users/stephenfreed/Projects"
 with open(processed_source, "a") as fp:
-    fp.write(f"{file_name_to_parse}\n")
+    fp.write(f"file_name_to_parse\n")
 
 old_way_file = open("old_way_file.txt", "r")
 old_way_file.write("old_way_file.txt")
