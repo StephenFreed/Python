@@ -1,35 +1,28 @@
 
-
-import os
-
-answer = os.environ.get("TEST_USER")
-
-print(answer)
-
+# get user input
 likes_snakes = input("Do you like snakes? ")
 
-# User input numbers into user_input variable.
-user_input = input('Numbers:')
+print(f"Your Answer: {likes_snakes}\n")
 
-# Creates list of str elements into list input_values_list.
-input_values_list = user_input.split()
+# user input numbers into user_input variable.
+user_input_numbers = input("Numbers:")
 
-print()
-print(input_values_list)
+# creates list of str elements into list input_values_list.
+input_values_list = user_input_numbers.split()
+print(f"List of Inputs: {input_values_list}")
+type_of_element_string = ""
+for element in input_values_list:
+    type_of_element_string+=str(type(element)) + " "
+print(f"{type_of_element_string}\n")
 
-# Convert str elements from input_values_list to int in my_list.
+# convert str elements from input_values_list to int in my_list.
 my_list = []
 for str_loop_value in input_values_list:
     my_list.append(int(str_loop_value))
+print(f"{my_list}")
+type_of_element_my_string = ""
+for element in my_list:
+    type_of_element_my_string+=str(type(element)) + " "
+print(f"{type_of_element_my_string}\n")
 
-print(my_list)
-
-#print out numbers from my_list with negatives as 0.
-for my_list_index, my_list_element in enumerate(my_list):
-    if my_list_element < 0:
-        my_list[my_list_index] = 0
-
-for final_values in my_list:
-    print(final_values, end=' ')
-print()
 
