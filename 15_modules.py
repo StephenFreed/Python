@@ -1,13 +1,17 @@
-#pip
-# A module is a collection of Python declarations intended broadly to be used as a tool. 
-# Modules are also often referred to as “libraries” or “packages” — a package is really a directory that holds a collection of modules.
-#
-# Usually, to use a module in a file, the basic syntax you need at the top of that file is:
-#
-# from module_name import object_name
-
 import random
 import time
+import datetime
+
+"""
+A module is a collection of Python declarations intended broadly to be used as a tool. 
+Modules are also often referred to as “libraries” or “packages” — a package is really a directory that holds a collection of modules.
+
+Usually, to use a module in a file, the basic syntax you need at the top of that file is:
+
+from module_name import object_name
+
+You can also create your own local modules and import, or import one file
+"""
 
 # Create random_list of 100 numbers.
 random_list = []
@@ -22,5 +26,4 @@ print(randomer_number)
 localtime = time.asctime( time.localtime(time.time()) )
 print( "Local current time is:", localtime )
 
-import datetime
 print(datetime.date.today())
