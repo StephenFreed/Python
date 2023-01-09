@@ -7,6 +7,12 @@ def hello_world(name):
     """
     print(f"Hello Word From {name}")
 
+def hello_world_positional(name, hello):
+    """
+    this function adds argument name to hello world
+    """
+    print(f"{hello} Word From {name}")
+
 
 def trip_welcome(destination="California"):
     """
@@ -16,6 +22,7 @@ def trip_welcome(destination="California"):
 
 
 hello_world("Foo")
+hello_world_positional(hello = "Hello", name = "Bar")
 trip_welcome("Florida")
 trip_welcome()
 
