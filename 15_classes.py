@@ -13,12 +13,12 @@ we name this first argument self. Methods always have at least this one argument
 
 The data held by an object is referred to as an instance variable. Instance variables 
 aren’t shared by all instances of a class — they are variables that are specific to the object they are attached to.
-
 """
 
-# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-class Person:
+
+class PersonClass:
+
     def __init__(self, first_name, last_name, age):
         self.first_name = first_name
         self.last_name = last_name
@@ -33,14 +33,18 @@ class Person:
     def get_last_name(self):
         print("{}\'s last name is {}".format(self.first_name, self.last_name))
 
+foo = PersonClass("Foo", "Bar", 20)
+first_name_attribute = hasattr(foo, "first_name")
+get_class_attribute = getattr(foo, "first_name", 500)
 
-jack = Person('Jack', 'Harlow', 26)
-yeah = hasattr(jack,"first_name")
-yeah2 = getattr(jack, "nope", 500)
+# print(type(foo))
+# print(foo)
+# print(first_name_attribute)
+# print(get_class_attribute)
+# print(foo.talk())
+# print(foo.get_last_name())
 
-print(type(jack))
 
-# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 class Student:
 
@@ -53,38 +57,75 @@ class Student:
     if type(grade) is Grade:
       self.grades.append(grade)
 
-class Grade:
+  def get_grades(self):
+      grade_list = []
+      for grade in self.grades:
+          grade_list.append(grade)
+      print(grade_list)
 
+class Grade:
   minimum_passing = 65
   def __init__(self, score):
     self.score = score
 
-  def list_grades(self):
-    listy = [str(grade.core) for grade in self.grades]
-    return listy
   
-roger = Student('Roger van der Weyden', 10)
-sandro = Student('Sandro Botticelli', 12)
-pieter = Student('Pieter Bruegel the Elder', 8)
+student_foo = Student("Foo", 10)
+stduent_bar = Student("Bar", 12)
+student_baz = Student("Baz", 8)
 
-pieter.add_grade(Grade(100))
-print(roger)
+student_foo.add_grade(Grade(100))
+student_foo.add_grade(Grade(80))
+student_foo.add_grade(Grade(90))
+student_foo.get_grades()
 
-# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
 
 class SearchEngineEntry:
   def __init__(self, url):
     self.url = url
  
-codecademy = SearchEngineEntry("www.codecademy.com")
-wikipedia = SearchEngineEntry("www.wikipedia.org")
- 
-print(codecademy.url)
-# prints "www.codecademy.com"
-print(wikipedia.url)
-# prints "www.wikipedia.org"
+bar_website = SearchEngineEntry("www.foo.com")
+foo_website = SearchEngineEntry("www.bar.org")
+# print(foo_website.url)
+# print(bar_website.url)
 
-# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+# dunder methods are built in python object methods
+# we can override these methods in our classes to get the functionality we want
+
+class NoDunderOverrides:
+    x = 5
+    y = 10
+
+
+print("~~~~~ No Dunder Override ~~~~~")
+no_dunder = NoDunderOverrides
+print(no_dunder)
+
+
+class DunderOverride:
+    x = 5
+    y = 10
+
+    # this overrides __init__ passing in self object and arguments to hold
+    def __init__(self, name="no name yet", age="no age yet"):
+        self.name = name
+        self.age = age
+
+    def __repr__(self):
+        return "I Am DunderOverride Class"
+
+    def __len__(self):
+        return 99
+
+
+print("~~~~~ Dunder Override ~~~~~")
+duner_override = DunderOverride("Stephen")
+print(duner_override)
+print(len(duner_override))
+print(duner_override.name)
+print(duner_override.age)
+
 
  
 """
@@ -92,9 +133,8 @@ Attributes can be added to user-defined objects after instantiation, so it’s p
 for an object to have some attributes that are not explicitly defined in an object’s constructor. 
 We can use the dir() function to investigate an object’s attributes at runtime. 
 dir() is short for directory and offers an organized presentation of object attributes.
-That’s certainly a lot more attributes than we defined! Python automatically adds a number 
-of attributes to all objects that get created. These internal attributes are usually 
-indicated by double-underscores. But sure enough, attribute is in that list.
+Python automatically adds a number of attributes to all objects that get created. These internal attributes are usually 
+indicated by double-underscores. 
 
 Do you remember being able to use type() on Python’s native data types? This is because they are 
 also objects in Python. Their classes are int, float, str, list, and dict. These Python classes 
@@ -107,6 +147,7 @@ When we printed the object out it simply printed the .name of the object! Cool!
 
 # getters and setters
 class Employee():
+
     def __init__(self,name = 'Name:'):
         self.__name = name
     
@@ -130,12 +171,12 @@ e1.name = 'Billy'
 
 del e1.name
 e1.name = 'Bob'
-e1.name
+# e1.name
 
 
 # python does not have method overloading only overriding
 # you would need if statements on type() or *arg length to sudo method override
-# pythong has multi-level inheritance Organism -> Animal(Organism) -> Dog(Animal)
+# python has multi-level inheritance Organism -> Animal(Organism) -> Dog(Animal)
 # multiple inheritance Dog(Animal,Organism)
 # method chaining / method must return self
 
@@ -155,26 +196,24 @@ class Cat(Animal):
     def noise(self):
         print('{} going prrrrrr'.format(self.name))
 
-class Person:
+class SomePerson:
     def noise(self):
         print('Person does this.')
 
 an_animal = Animal('Animal')
-my_lion = Lion('Badass Lion')
+my_lion = Lion('Lion')
 my_cat = Cat("Kitty")
-my_person = Person()
-yeah = [an_animal,my_lion,my_cat,my_person]
+my_person = SomePerson()
+class_list = [an_animal,my_lion,my_cat,my_person]
 
-for elm in yeah:
-    elm.noise()
+# for elm in class_list:
+#     elm.noise()
 
-my_person.noise()
-
-print(Animal.age)
-a = Animal("Tiger")
-print(a.name)
-print(a.noise())
-print(a.age)
+# print(Animal.age)
+# a = Animal("Tiger")
+# print(a.name)
+# print(a.noise())
+# print(a.age)
 
 
 
@@ -235,7 +274,7 @@ class HighSchool(School):
 phillipsburg = HighSchool('Phillipsbug','High School', '500',['football','soccer','baseball'])
 lopat = PrimarySchool('Lopat', '100', 'Yes')
 
-print(repr(phillipsburg))
+# print(repr(phillipsburg))
 
 
 
@@ -266,11 +305,11 @@ class Person:
 
 
 stephen = Person("Stephen", 36, 12345)
-print(stephen.name)
-print(stephen.age)
-print(stephen._social_security)  # still able to access protected attribute
+# print(stephen.name)
+# print(stephen.age)
+# print(stephen._social_security)  # still able to access protected attribute
 stephen.set_social_security(9999999)  # setting new social
-print(stephen.get_social_security())  # getting social
+# print(stephen.get_social_security())  # getting social
 
 
 # ~~~~~~~~~~ Private Access Modifier ~~~~~~~~~~
@@ -300,8 +339,8 @@ class PrivatePerson:
 
 
 stephen = PrivatePerson("Stephen", 36, 12345)
-print(stephen.name)
-print(stephen.age)
+# print(stephen.name)
+# print(stephen.age)
 # print(stephen.__social_security)  # trying to access private attribute throws error
 stephen.set_social_security(9999999)  # setting new social
-print(stephen.get_social_security())  # getting social
+# print(stephen.get_social_security())  # getting social
