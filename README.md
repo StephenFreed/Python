@@ -34,56 +34,26 @@
 ### *activate venv:*
 `source <VENV_DIR>/bin/activate`
 
-# check correct python is being used
-which python or pip
+### *check correct python is being used:*
+`which python or pip`
 
-# In venv use python and pip without the 3
-python and pip
+### *in venv use python and pip without the 3:*
+`python and pip`
 
-# deactivate venv
-deactivate
+### *deactivate venv:*
+`deactivate`
 
-# create requirements.txt
-pip freeze > requirements.txt
+### *create requirements.txt:*
+`pip freeze > requirements.txt`
 
-# install requirements.txt
-pip install -r requirements.txt
+### *install requirements.txt:*
+`pip install -r requirements.txt`
 
-# pip uninstall all packages(make requirements.txt file first)
-pip uninstall -y -r <(pip freeze)  # doesn't make file just removes
+### *pip uninstall all packages(make requirements.txt file first):*
+`pip uninstall -y -r <(pip freeze)  # doesn't make file just removes`
 
-# show installed and not their dependencies
-pip list --not-required
+### *show installed and not their dependencies:*
+`pip list --not-required`
 
-# show package dependencies
-pip show package_name
-
-dir_path = os.path.dirname(os.path.realpath(__file__)) + "/"
-sys.path.append(dir_path)
-
-######################################
-# ~~~~~~~~~~~~~ Python ~~~~~~~~~~~~~ #
-######################################
-
-
-####################################
-# ~~~~~~~~~~~~ Flask ~~~~~~~~~~~~~ #
-####################################
-
-# set app name in terminal
-set FLASK_APP=app_name.py # Windows
-export FLASK_APP=app_name.py # Mac/Linux
-
-# set debug
-set FLASK_DEBUG=1 # Windows
-export FLASK_DEBUG=1 # Mac/Linux
-
-# run Flask
-flask run
-
-# run app with debug in "if name main"
-python app.py
-
-####################################
-# ~~~~~~~~~~~~ Flask ~~~~~~~~~~~~~ #
-####################################
+### *show package dependencies:*
+`pip show <package_name>`
