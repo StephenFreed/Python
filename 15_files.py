@@ -2,10 +2,12 @@ import os
 import shutil
 import csv
 import json
+import sys
 
 
 dir_path = os.path.dirname(os.path.realpath(__file__)) + "/"
 print(dir_path)
+print(sys.path.append(dir_path))
 
 env_var = os.environ.get("HOME")
 print(env_var)
